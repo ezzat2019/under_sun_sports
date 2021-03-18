@@ -1,4 +1,4 @@
-package com.marvel.under_sun_sports
+package com.marvel.underSunSports
 
 import io.flutter.embedding.android.FlutterActivity
 
