@@ -31,6 +31,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final flutterWebviewPlugin = new FlutterWebviewPlugin();
+  String e="ezzat";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
