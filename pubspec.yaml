@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  animated_splash_screen: ^1.1.0
   flutter_webview_plugin: ^0.3.11
 
   flutter:

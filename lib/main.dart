@@ -1,7 +1,12 @@
 import 'dart:io';
 
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'package:under_sun_sports/main_screen.dart';
+
+import 'animati_splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +15,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -29,38 +35,36 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+
+
 class _MyHomePageState extends State<MyHomePage> {
   final flutterWebviewPlugin = new FlutterWebviewPlugin();
-  String e="ezzat";
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
 
+    return  Material(
+
+        child: Stack(
           children: [
+            Scaffold(
+            backgroundColor: Colors.white,
+            body:  AnimatedSplashScreen(
+              splashIconSize: 200.0,
+              splash: 'assets/icon/under_sun.png',
+              nextScreen: MainScreen(),
+              splashTransition: SplashTransition.rotationTransition,
 
-            if(Platform.isIOS)
-            Row(
-              children: [
-              IconButton(icon: Icon(Icons.arrow_back,size: 20,), onPressed: () {
-                flutterWebviewPlugin.goBack();
-              },)
-            ],),
-
-
-            Expanded(
-              child: WebviewScaffold(
-                url: "https://www.undersunsports.com/",
-
-                appCacheEnabled: true,
-                clearCache: false,
-                clearCookies: false,
-              ),
             ),
+          ),
+        AnimationScreen(
+            color: Colors.black
+        )
+
           ],
-        ),
+
+
+
       ),
     );
   }
