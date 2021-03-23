@@ -2,7 +2,6 @@
 class Assets {
   Assets._();
 
-  static const String iconUnderSun2 = 'assets/icon/under_sun2.png';
-  static const String iconUnderSun30 = 'assets/icon/under_sun30.png';
+  static const String iconUnderSunGrayWithoutBall = 'assets/icon/under_sun_gray_without_ball.png';
 
 }

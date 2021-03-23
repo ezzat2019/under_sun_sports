@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
             backgroundColor: Colors.white,
             body:  AnimatedSplashScreen(
               splashIconSize: 200.0,
-              splash: 'assets/icon/under_sun.png',
+              splash: 'assets/icon/under_sun_gray_without_ball.png',
               nextScreen: MainScreen(),
               splashTransition: SplashTransition.rotationTransition,
 
